@@ -1,0 +1,7 @@
+@media screen and (max-width: 413px) {
+    @media (max-width: 413px) {
+        .grid-side {
+          grid-template-columns: repeat(2, minmax(2, 1fr));
+        }
+      }
+}

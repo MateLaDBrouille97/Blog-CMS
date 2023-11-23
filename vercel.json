@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "builds": [
+      { "src": "next.config.js", "use": "@vercel/next" }
+    ],
+    "env": {
+        "accessKeyId": "AKIAQK7EQ4DINBSQQM5L",
+        "secretAccessKey": "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",
+        "aws_project_region": "us-east-1",
+        "aws_app_sync_api_key": "da2-cnr4met3urhffoddsx6r6zx6da",
+        "aws_cognito_region": "us-east-1",
+        "aws_user_pools_id": "us-east-1_TDefrBjtc",
+        "aws_user_pools_web_client_id": "11t4ivop3f2069raee9oa4tp2u"
+      }
+  }
+  
