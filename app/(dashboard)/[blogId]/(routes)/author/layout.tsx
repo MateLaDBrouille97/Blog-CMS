@@ -10,7 +10,7 @@ const AuthorLayout = ({
   const { userId } = auth();
 
   if (!userId) {
-    return redirect("/");
+    return redirect("/author");
   }
 
   return <>{children}</>

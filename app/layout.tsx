@@ -23,15 +23,12 @@ export default function RootLayout({
   pageProps: AppProps;
 }) {
   return (
-    
     <ClerkProvider>
       <html lang="en">
         <body className={inter.className}>
-        
           <ToastProvider />
           <ModalProvider />
           {children}
-       
         </body>
       </html>
     </ClerkProvider>

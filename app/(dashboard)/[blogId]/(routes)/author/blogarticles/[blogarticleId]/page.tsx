@@ -25,7 +25,7 @@ const BlogarticleIdPage = async ({
   const { userId } = auth();
 
   if (!userId) {
-    return redirect("/");
+    return redirect("/blogarticles");
   }
 
   const article = await prismadb.blogarticle.findUnique({
@@ -66,7 +66,7 @@ const BlogarticleIdPage = async ({
   });
 
   if (!article) {
-    return redirect("/");
+    return redirect("/blogarticles");
   }
 
   const requiredFields = [

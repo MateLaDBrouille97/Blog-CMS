@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import StoreSwitcher from "@/components/store-switcher";
 import prismadb from "@/lib/prismadb";
 
-const Sidebar = async () => {
+const Sidebar = async ({blogId}:{blogId:string}) => {
   const { userId } = auth();
 
   if (!userId) {
@@ -26,7 +26,7 @@ const Sidebar = async () => {
       <div className="py-5">
         <StoreSwitcher items={blogs} />
       </div>
-      <MainNav2 />
+      <MainNav2 blogId={blogId}/>
     </div>
   );
 };

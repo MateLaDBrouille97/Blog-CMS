@@ -1,3 +1,6 @@
+import { Card, List } from "@prisma/client";
+
+
 export interface BillboardBlog {
   id: string;
   label: string;
@@ -71,3 +74,7 @@ export interface Author {
     email:string;
     image:string;
 }
+
+export type ListWithCards = List & { cards: Card[] };
+
+export type CardWithList = Card & { list: List };

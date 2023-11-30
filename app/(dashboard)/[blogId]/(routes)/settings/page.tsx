@@ -24,7 +24,7 @@ const SettingsPage = async ({
   });
 
   if (!blog) {
-    redirect('/');
+    redirect('/settings');
   }
 
   return ( 

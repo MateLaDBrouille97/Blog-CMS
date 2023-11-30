@@ -30,7 +30,7 @@ const ChapterIdPage = async ({
   const { userId } = auth();
 
   if (!userId) {
-    return redirect("/");
+    return redirect("/blogarticles");
   }
 
   const chapter = await prismadb.chapter.findUnique({
@@ -50,7 +50,7 @@ const ChapterIdPage = async ({
   // });
 
   if (!chapter) {
-    return redirect("/");
+    return redirect("/blogarticles");
   }
 
   const requiredFields = [chapter.title, chapter.description];

@@ -13,7 +13,7 @@ const ArticlesPage = async () => {
   const { userId } = auth();
 
   if (!userId) {
-    return redirect("/");
+    return redirect("/sign-in");
   }
 
   const articles = await prismadb.blogarticle.findMany({
