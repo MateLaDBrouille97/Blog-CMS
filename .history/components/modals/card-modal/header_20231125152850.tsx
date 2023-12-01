@@ -51,7 +51,6 @@ export const Header = ({
   const onSubmit = (formData: FormData) => {
     const title = formData.get("title") as string;
     const boardId = params.boardId as string;
-    const blogId=params.blogId as string
 
     if (title === data.title) {
       return;
@@ -61,7 +60,6 @@ export const Header = ({
       title,
       boardId,
       id: data.id,
-      blogId,
     });
   }
 

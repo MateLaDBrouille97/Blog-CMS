@@ -50,21 +50,19 @@ export const Actions = ({
 
   const onCopy = () => {
     const boardId = params.boardId as string;
-    const blogId=params.blogId as string 
+
     executeCopyCard({
       id: data.id,
       boardId,
-      blogId
     });
   };
 
   const onDelete = () => {
     const boardId = params.boardId as string;
-    const blogId=params.blogId as string
+
     executeDeleteCard({
       id: data.id,
       boardId,
-      blogId
     });
   };
   

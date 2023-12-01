@@ -69,7 +69,7 @@ export const Description = ({
   const onSubmit = (formData: FormData) => {
     const description = formData.get("description") as string;
     const boardId = params.boardId as string;
-    const blogId=params.blogId as string;
+    const blogId=params.blogId as string
 
     execute({
       id: data.id,

@@ -29,12 +29,12 @@ export const ListOptions = ({
   onAddCard,
   blogId
 }: ListOptionsProps) => {
-  const closeRef = useRef<ElementRef<"button">>(null);//when you delete something the popover can stay to prevent that we create a ref to avoid that 
+  const closeRef = useRef<ElementRef<"button">>(null);
 
   const { execute: executeDelete } = useAction(deleteList, {
     onSuccess: (data) => {
       toast.success(`List "${data.title}" deleted`);
-      closeRef.current?.click();//closeRef is associated with popoverClose
+      closeRef.current?.click();
     },
     onError: (error) => {
       toast.error(error);

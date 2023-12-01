@@ -61,7 +61,7 @@ export const Header = ({
       title,
       boardId,
       id: data.id,
-      blogId,
+      blogId
     });
   }
 
