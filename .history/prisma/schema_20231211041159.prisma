@@ -165,9 +165,6 @@ model Author {
   twitter         String?
   facebook        String?
   instagram       String?
-  github          String?
-  linkedIn        String?
-  buyMeACoffee    String?
   createdAt       DateTime      @default(now())
   updatedAt       DateTime      @updatedAt
   blog            Blog          @relation("BlogToAuthor", fields: [blogId], references: [id])

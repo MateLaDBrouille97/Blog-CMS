@@ -125,16 +125,6 @@ const ChapterIdPage = async ({
                 blogarticleId={params.blogarticleId}
                 chapterId={params.chapterId}
               />
-              <ChapterYoutubeHrefForm
-               initialData={chapter}
-               blogarticleId={params.blogarticleId}
-               chapterId={params.chapterId}
-              />
-               <ChapterYoutubeAccessForm
-               initialData={chapter}
-               blogarticleId={params.blogarticleId}
-               chapterId={params.chapterId}
-              />
             </div>
             <div>
               <div className="flex items-center gap-x-2">

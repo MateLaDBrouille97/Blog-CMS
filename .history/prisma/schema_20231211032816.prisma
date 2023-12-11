@@ -83,7 +83,7 @@ model Blogarticle {
   categoryId  String?
   subcatId    String?          @unique
   authorId    String?
-   youtubeUrl  String?
+  youtubeUrl  String?
   isYoutube   Boolean?         @default(false)
   createdAt   DateTime         @default(now())
   updatedAt   DateTime         @updatedAt
@@ -120,8 +120,6 @@ model Chapter {
   isFree        Boolean        @default(false)
   href          String?
   blogarticleId String
-  youtubeUrl  String?
-  isYoutube   Boolean?         @default(false)
   createdAt     DateTime       @default(now())
   updatedAt     DateTime       @updatedAt
   muxData       MuxData?
@@ -161,13 +159,10 @@ model Author {
   email           String
   image           String
   descriptionLong     String?
-  title           String?
+  titles          String[]
   twitter         String?
   facebook        String?
   instagram       String?
-  github          String?
-  linkedIn        String?
-  buyMeACoffee    String?
   createdAt       DateTime      @default(now())
   updatedAt       DateTime      @updatedAt
   blog            Blog          @relation("BlogToAuthor", fields: [blogId], references: [id])

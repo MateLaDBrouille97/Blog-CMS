@@ -20,8 +20,6 @@ import { ChapterVideoForm } from "./_components/chapter-video-form";
 import { ChapterActions } from "./_components/chapter-actions";
 import { ChapterImageForm } from "./_components/chapter-image-form";
 import { ChapterHrefForm } from "./_components/chapter-href-form";
-import { ChapterYoutubeAccessForm } from "./_components/chapter-youtube-access-form";
-import { ChapterYoutubeHrefForm } from "./_components/chapter-youtube-form";
 import { Button } from "@/components/ui/button";
 
 const ChapterIdPage = async ({
@@ -124,16 +122,6 @@ const ChapterIdPage = async ({
                 initialData={chapter}
                 blogarticleId={params.blogarticleId}
                 chapterId={params.chapterId}
-              />
-              <ChapterYoutubeHrefForm
-               initialData={chapter}
-               blogarticleId={params.blogarticleId}
-               chapterId={params.chapterId}
-              />
-               <ChapterYoutubeAccessForm
-               initialData={chapter}
-               blogarticleId={params.blogarticleId}
-               chapterId={params.chapterId}
               />
             </div>
             <div>

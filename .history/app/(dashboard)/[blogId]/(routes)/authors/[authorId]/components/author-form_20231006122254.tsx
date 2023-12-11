@@ -32,14 +32,6 @@ const formSchema = z.object({
   email: z.string().min(1),
   image: z.string().min(1),
   billboardBlogId: z.string().min(1),
-  descriptionLong:z.string().min(1).nullable(),
-  title:z.string().min(1).nullable(),
-  twitter:z.string().min(1).nullable(),
-  facebook:z.string().min(1).nullable(),
-  instagram:z.string().min(1).nullable(),
-  github:z.string().min(1).nullable(),
-  linkedIn:z.string().min(1).nullable(),
-  buyMeACoffee:z.string().min(1).nullable(),
 });
 
 type AuthorFormValues = z.infer<typeof formSchema>;
@@ -72,14 +64,6 @@ export const AuthorForm: React.FC<AuthorFormProps> = ({
       email: "",
       billboardBlogId: '',
       image: "",
-      descriptionLong:"",
-      title:"",
-      twitter:"",
-      facebook:"",
-      instagram:"",
-      github:"",
-      linkedIn:"",
-      buyMeACoffee:"",
     },
   });
 
@@ -248,150 +232,6 @@ export const AuthorForm: React.FC<AuthorFormProps> = ({
                       ))}
                     </SelectContent>
                   </Select>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-              <FormField
-              control={form.control}
-              name="descriptionLong"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Description</FormLabel>
-                  <FormControl>
-                    <Input
-                      disabled={loading}
-                      placeholder="Author description"
-                      {...field}
-                      value={field.value || ''}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-              <FormField
-              control={form.control}
-              name="title"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Titles</FormLabel>
-                  <FormControl>
-                    <Input
-                      disabled={loading}
-                      placeholder="titles"
-                      {...field}
-                      value={field.value || ''}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-              <FormField
-              control={form.control}
-              name="twitter"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Twitter</FormLabel>
-                  <FormControl>
-                    <Input
-                      disabled={loading}
-                      placeholder="Author twitter"
-                      {...field}
-                      value={field.value || ''}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-              <FormField
-              control={form.control}
-              name="facebook"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Facebook</FormLabel>
-                  <FormControl>
-                    <Input
-                      disabled={loading}
-                      placeholder="Author facebook"
-                      {...field}
-                      value={field.value || ''}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-              <FormField
-              control={form.control}
-              name="instagram"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Instagram</FormLabel>
-                  <FormControl>
-                    <Input
-                      disabled={loading}
-                      placeholder="Author instagram"
-                      {...field}
-                      value={field.value || ''}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-             <FormField
-              control={form.control}
-              name="github"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Github</FormLabel>
-                  <FormControl>
-                    <Input
-                      disabled={loading}
-                      placeholder="Author github"
-                      {...field}
-                      value={field.value || ''}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-             <FormField
-              control={form.control}
-              name="linkedIn"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>LinkedIn</FormLabel>
-                  <FormControl>
-                    <Input
-                      disabled={loading}
-                      placeholder="Author LinkedIn"
-                      {...field}
-                      value={field.value || ''}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-             <FormField
-              control={form.control}
-              name="buyMeACoffee"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>BuyMeACoffee</FormLabel>
-                  <FormControl>
-                    <Input
-                      disabled={loading}
-                      placeholder="Author buyMeACoffee"
-                      {...field}
-                      value={field.value || ''}
-                    />
-                  </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
