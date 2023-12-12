@@ -36,7 +36,7 @@ const DashboardPage: React.FC<DashboardPageProps> = async ({
     "TOOLS"
   ]
 
-  
+  console.log(params?.blogId)
 
   const totalBACount= await getBACount(params?.blogId);
   const totalChapterCount= await getChaptersCount(params?.blogId);

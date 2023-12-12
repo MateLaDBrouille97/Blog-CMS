@@ -36,18 +36,17 @@ const DashboardPage: React.FC<DashboardPageProps> = async ({
     "TOOLS"
   ]
 
-  
 
   const totalBACount= await getBACount(params?.blogId);
   const totalChapterCount= await getChaptersCount(params?.blogId);
   const graphCount =await getGraphCount(params?.blogId)
   const graphCountCategory =await getGraphCountByCategory(params?.blogId)
-  const newsArticles=await getBACountByCategory(params?.blogId,categoryName[0]);
-  const opinionsArticles=await getBACountByCategory(params?.blogId,categoryName[1]);
-  const geopolArticles=await getBACountByCategory(params?.blogId,categoryName[2]);
-  const analysisArticles=await getBACountByCategory(params?.blogId,categoryName[3]);
-  const ufhArticles=await getBACountByCategory(params?.blogId,categoryName[4]);
-  const toolsArticles=await getBACountByCategory(params?.blogId,categoryName[5]);
+  const newsArticles=await getBACountByCategory(categoryName[0]);
+  const opinionsArticles=await getBACountByCategory(categoryName[1]);
+  const geopolArticles=await getBACountByCategory(categoryName[2]);
+  const analysisArticles=await getBACountByCategory(categoryName[3]);
+  const ufhArticles=await getBACountByCategory(categoryName[4]);
+  const toolsArticles=await getBACountByCategory(categoryName[5]);
   // const totalRevenue = await getTotalRevenue(params.blogId);
   // const graphRevenue = await getGraphRevenue(params.blogId);
   // const salesCount = await getSalesCount(params.blogId);
