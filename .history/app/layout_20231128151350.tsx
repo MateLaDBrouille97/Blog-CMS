@@ -13,12 +13,6 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Blog Dashboard",
   description: "Admin Blog Dashboard",
-  icons: [
-    {
-      url: "/remi-muller-hYAmjIvLALE-unsplash.jpg",
-      href: "/remi-muller-hYAmjIvLALE-unsplash.jpg"
-    }
-  ]
 };
 
 export default function RootLayout({
