@@ -66,7 +66,7 @@ export const SubCategoryForm = ({
 
   const selectedOption = options.find((option) => option.value === initialData?.subcatId);
 
-  
+  console.log(selectedOption)
 
   return (
     <div className="mt-6 border bg-slate-100 rounded-md p-4">

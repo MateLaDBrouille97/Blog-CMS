@@ -64,9 +64,7 @@ export const SubCategoryForm = ({
     }
   }
 
-  const selectedOption = options.find((option) => option.value === initialData?.subcatId);
-
-  
+  const selectedOption = options.find((option) => option.value === initialData.subcatId);
 
   return (
     <div className="mt-6 border bg-slate-100 rounded-md p-4">
@@ -86,7 +84,7 @@ export const SubCategoryForm = ({
       {!isEditing && (
         <p className={cn(
           "text-sm mt-2",
-          !initialData.subcatId && "text-slate-500 italic"
+          !initialData.categoryId && "text-slate-500 italic"
         )}>
           {selectedOption?.label || "No subcategory"}
         </p>
