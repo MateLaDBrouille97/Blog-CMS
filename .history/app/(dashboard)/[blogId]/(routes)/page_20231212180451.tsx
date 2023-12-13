@@ -36,6 +36,7 @@ const DashboardPage: React.FC<DashboardPageProps> = async ({
     "TOOLS"
   ]
 
+  
 
   const totalBACount= await getBACount(params?.blogId);
   const totalChapterCount= await getChaptersCount(params?.blogId);
@@ -208,7 +209,7 @@ const DashboardPage: React.FC<DashboardPageProps> = async ({
       </div>
       <Separator />
       <div className="flex-1 space-y-4 p-8 pt-6">
-        <Heading title="Categories" description="Overview of your blog's categories" />
+        <Heading title="Dashboard" description="Overview of your blog" />
         <Separator />
         <div className="grid gap-4 grid-cols-3">         
         </div>
