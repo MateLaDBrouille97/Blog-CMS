@@ -8,22 +8,22 @@ import { useParams, useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { ConfirmModal } from "@/components/modals/confirm-modal";
-import { useConfettiStore } from "@/hooks/use-confetti-store";
 
-interface ActionsProps {
+interface ChapterActionsProps {
   disabled: boolean;
   blogarticleId: string;
+  chapterId: string;
   isPublished: boolean;
 };
 
-export const Actions = ({
+export const ChapterActions = ({
   disabled,
   blogarticleId,
+  chapterId,
   isPublished
-}: ActionsProps) => {
+}: ChapterActionsProps) => {
   const router = useRouter();
   const params = useParams();
-  const confetti = useConfettiStore();
   const [isLoading, setIsLoading] = useState(false);
 
   const onClick = async () => {
@@ -31,12 +31,11 @@ export const Actions = ({
       setIsLoading(true);
 
       if (isPublished) {
-        await axios.patch(`/api/${params.blogId}/blogarticles/${blogarticleId}/unpublish`);
-        toast.success("Course unpublished");
+        await axios.patch(`/api/${params.blogId}/blogarticles/${blogarticleId}/chapters/${chapterId}/unpublish`);
+        toast.success("Chapter unpublished");
       } else {
-        await axios.patch(`/api/${params.blogId}/blogarticles/${blogarticleId}/publish`);
-        toast.success("Course published");
-        confetti.onOpen();
+        await axios.patch(`/api/${params.blogId}/blogarticles/${blogarticleId}/chapters/${chapterId}/publish`);
+        toast.success("Chapter published");
       }
 
       router.refresh();
@@ -46,15 +45,17 @@ export const Actions = ({
       setIsLoading(false);
     }
   }
+
+ 
   
   const onDelete = async () => {
     try {
       setIsLoading(true);
 
-      await axios.delete(`/api/${params.blogId}/blogarticles/${blogarticleId}`);
+      await axios.delete(`/api/${params.blogId}/blogarticles/${blogarticleId}/chapters/${chapterId}`);
 
-      toast.success("Course deleted");
-      router.push(`/${params.blogId}/author/blogarticles`);
+      toast.success("Chapter deleted");
+      router.push(`/author/blogarticles/${blogarticleId}`);
       router.refresh();
       
     } catch {
