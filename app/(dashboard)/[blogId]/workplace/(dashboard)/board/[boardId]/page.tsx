@@ -8,20 +8,17 @@ import { ListContainer } from "./_components/list-container";
 interface BoardIdPageProps {
   params: {
     boardId: string;
-    blogId:string;
+    blogId: string;
   };
-};
+}
 
-const BoardIdPage = async ({
-  params,
-}: BoardIdPageProps) => {
-  
+const BoardIdPage = async ({ params }: BoardIdPageProps) => {
   const { orgId } = auth();
- 
+
   if (!orgId) {
     redirect(`${params.blogId}/workplace/`);
   }
-  
+
   const lists = await prismadb.list.findMany({
     where: {
       boardId: params.boardId,

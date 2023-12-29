@@ -394,6 +394,7 @@ enum ENTITY_TYPE {
   BOARD
   LIST
   CARD
+  WHITEBOARD
 }
 
 model AuditLog {

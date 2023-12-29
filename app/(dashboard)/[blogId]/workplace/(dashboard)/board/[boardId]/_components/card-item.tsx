@@ -4,16 +4,15 @@ import { Card } from "@prisma/client";
 import { Draggable } from "@hello-pangea/dnd";
 
 import { useCardModal } from "@/hooks/use-card-modal";
+import { CardOptions } from "./card-options";
 
 interface CardItemProps {
   data: Card;
   index: number;
-};
+  blogId: string;
+}
 
-export const CardItem = ({
-  data,
-  index,
-}: CardItemProps) => {
+export const CardItem = ({ data, index, blogId }: CardItemProps) => {
   const cardModal = useCardModal();
 
   return (
@@ -27,7 +26,9 @@ export const CardItem = ({
           onClick={() => cardModal.onOpen(data.id)}
           className="truncate border-2 border-transparent hover:border-black py-2 px-3 text-sm bg-white rounded-md shadow-sm"
         >
-          {data.title}
+          {data?.title?.substring(0, 20) +
+            (data?.title?.length > 20 ? "..." : "")}
+          
         </div>
       )}
     </Draggable>

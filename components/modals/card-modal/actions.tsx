@@ -1,8 +1,8 @@
 "use client";
 
 import { toast } from "sonner";
-import { Copy, Trash } from "lucide-react";
-import { useParams } from "next/navigation";
+import { Copy, Trash,BookMarked } from "lucide-react";
+import { useParams,useRouter } from "next/navigation";
 
 import { CardWithList } from "@/types";
 import { useAction } from "@/hooks/use-action";
@@ -11,6 +11,8 @@ import { Button } from "@/components/ui/button";
 import { deleteCard } from "@/actions/delete-card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useCardModal } from "@/hooks/use-card-modal";
+import { createWhiteBoard } from "@/actions/create-whiteboard";
+
 
 interface ActionsProps {
   data: CardWithList;
@@ -20,6 +22,7 @@ export const Actions = ({
   data,
 }: ActionsProps) => {
   const params = useParams();
+  const router = useRouter();
   const cardModal = useCardModal();
 
   const { 
@@ -67,7 +70,61 @@ export const Actions = ({
       blogId
     });
   };
+
   
+
+  const { 
+    execute: executeCreateWhiteboard,
+    isLoading: isLoadingWhiteboard,
+  } = useAction(createWhiteBoard, {
+    onSuccess: (data) => {
+      toast.success(`Whiteboard of ${data.title} updated`);
+      cardModal.onClose();
+      console.log(data);
+    },
+    onError: (error) => {
+      toast.error(error);
+    },
+  });
+  
+
+  const onWhiteboard = async () => {
+    const boardId = params.boardId as string;
+    const blogId = params.blogId as string;
+  
+    try {
+      // Execute the create whiteboard action
+      await executeCreateWhiteboard({
+        boardId,
+        blogId,
+        cardId: data.id,
+      });
+  
+      // If the action is successful, navigate to the whiteboard route
+      router.push(`/${params.blogId}/workplace/whiteboard/${data.id}`);
+      
+      // Close the card modal (if needed)
+      cardModal.onClose();
+    } catch (error) {
+      toast.error("Something went wrong");
+    }
+  };
+  
+
+ 
+
+
+  // const onWhiteboard = async () => {
+  //   try {    
+  //     router.push(`/${params.blogId}/workplace/whiteboard`);
+  //     toast.success("");
+    
+  //   } catch {
+  //     toast.error("Something went wrong");
+  //   }
+  // }
+
+
   return (
     <div className="space-y-2 mt-2">
       <p className="text-xs font-semibold">
@@ -86,12 +143,22 @@ export const Actions = ({
       <Button
         onClick={onDelete}
         disabled={isLoadingDelete}
-        variant="gray"
+        variant="destructive"
         className="w-full justify-start"
         size="inline"
       >
         <Trash className="h-4 w-4 mr-2" />
         Delete
+      </Button>
+      <Button
+        onClick={onWhiteboard}
+        disabled={isLoadingWhiteboard}
+        variant="ghost"
+        className="w-full justify-start"
+        size="inline"
+      >
+        <BookMarked className="h-4 w-4 mr-2" />
+        Whiteboard
       </Button>
     </div>
   );

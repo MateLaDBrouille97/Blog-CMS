@@ -1,9 +1,8 @@
 import { auth } from "@clerk/nextjs";
 import { notFound, redirect } from "next/navigation";
-
+import { BoardNavbar } from "./_components/board-navbar";
 import prismadb from "@/lib/prismadb";
 
-import { BoardNavbar } from "./_components/board-navbar";
 
 export async function generateMetadata({ 
   params

@@ -68,6 +68,7 @@ export const ListItem = ({
                       index={index}
                       key={card.id}
                       data={card}
+                      blogId={blogId}
                     />
                   ))}
                   {provided.placeholder}

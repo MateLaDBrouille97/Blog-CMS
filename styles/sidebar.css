@@ -5,3 +5,102 @@
         }
       }
 }
+
+.tldraw__editor {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+  margin-top: 100px;
+  margin-left: 220px;
+	width: 86%;
+	height: 86%;
+	overflow: hidden;
+}
+
+.custom-layout {
+	position: absolute;
+	inset: 0px;
+	z-index: 300;
+	pointer-events: none;
+}
+
+.custom-toolbar {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 8px;
+	gap: 8px;
+}
+
+.custom-button {
+	pointer-events: all;
+	padding: 4px 12px;
+	background: white;
+	border: 1px solid black;
+	border-radius: 64px;
+}
+
+.custom-button[data-isactive='true'] {
+	background-color: black;
+	color: white;
+}
+
+.button-editor{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+}
+
+.makeRealButton {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+	background: var(--color-primary);
+	color: white;
+	border: none;
+	font: inherit;
+	font-weight: 600;
+	padding: var(--space-3) var(--space-4);
+	border-radius: var(--radius-2);
+	margin: var(--space-3);
+	cursor: pointer;
+	pointer-events: all;
+}
+.makeRealButton:hover {
+	opacity: 0.95;
+}
+
+@media screen and (max-width: 928px) {
+
+  .tldraw__editor {
+   
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    margin-top: 100px;
+    margin-left: 220px;
+    width: 77%;
+    height: 86%;
+    overflow: hidden;
+  }
+  
+ 
+  
+  }
+  
+  
+  @media screen and (max-width: 450px) {
+  
+    
+  }
