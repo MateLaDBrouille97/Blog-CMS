@@ -1,6 +1,8 @@
 "use client";
 
+
 import {
+	// Tldraw,
   Canvas,
   ContextMenu,
   TldrawEditor,
@@ -13,10 +15,21 @@ import {
   defaultShapeTools,
   defaultShapeUtils,
   defaultTools,
+  AssetRecordType,
+  Editor,
+  MediaHelpers,
+  TLAsset,
+  TLAssetId,
+  
+  getHashForString,
+  isGifAnimated,
+  uniqueId,
 } from "@tldraw/tldraw";
 import "@tldraw/tldraw/tldraw.css";
+import dynamic from 'next/dynamic'
 import { Button } from "../ui/button";
 import { ReturnButton } from "../ReturnButton";
+import { useCallback } from "react";
 
 const defaultComponents = {
   Scribble: TldrawScribble,
@@ -27,6 +40,10 @@ const defaultComponents = {
   HoveredShapeIndicator: TldrawHoveredShapeIndicator,
 };
 
+const Tldraw = dynamic(async () => (await import('@tldraw/tldraw')).Tldraw, {
+	ssr: false,
+})
+
 export default function Editor2({
   store,
   boardId,
@@ -34,22 +51,23 @@ export default function Editor2({
   store: any;
   boardId: string;
 }) {
+
+	
+
+
   return (
     <div className="tldraw__editor">
-      <TldrawEditor
-        initialState="select"
-        shapeUtils={defaultShapeUtils}
-        tools={[...defaultTools, ...defaultShapeTools]}
-        components={defaultComponents}
-        persistenceKey="exploded-example"
-        store={store}
-      >
-        <TldrawUi>
-          <ContextMenu>
-            <Canvas />
-          </ContextMenu>
-        </TldrawUi>
-      </TldrawEditor>
+       <Tldraw
+				// persistenceKey="make-real"
+				// shareZone={<MakeRealButton />}
+				// shapeUtils={defaultShapeUtils}
+				// tools={[...defaultTools, ...defaultShapeTools]}
+				// components={defaultComponents}
+				store={store}
+			>
+				
+				{/* <RiskyButCoolAPIKeyInput /> */}
+			</Tldraw>
     </div>
   );
 }

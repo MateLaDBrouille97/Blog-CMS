@@ -80,7 +80,7 @@ export const Actions = ({
     onSuccess: (data) => {
       toast.success(`Whiteboard of ${data.title} updated`);
       cardModal.onClose();
-      console.log(data);
+  
     },
     onError: (error) => {
       toast.error(error);
