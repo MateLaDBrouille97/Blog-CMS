@@ -26,7 +26,7 @@ import {
   uniqueId,
 } from "@tldraw/tldraw";
 import "@tldraw/tldraw/tldraw.css";
-import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic';
 import { Button } from "../ui/button";
 import { ReturnButton } from "../ReturnButton";
 import { useCallback } from "react";
@@ -58,7 +58,7 @@ export default function Editor2({
   return (
     <div className="tldraw__editor">
        <Tldraw
-				// persistenceKey="make-real"
+				persistenceKey="make-real"
 				// shareZone={<MakeRealButton />}
 				// shapeUtils={defaultShapeUtils}
 				// tools={[...defaultTools, ...defaultShapeTools]}
