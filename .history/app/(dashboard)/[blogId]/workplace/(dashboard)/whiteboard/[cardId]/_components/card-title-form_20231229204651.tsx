@@ -47,15 +47,15 @@ export const CardTitleForm = ({
     setIsEditing(false);
   };
 
-  // const onSubmit = (formData: FormData) => {
-  //   const title = formData.get("title") as string;
+  const onSubmit = (formData: FormData) => {
+    const title = formData.get("title") as string;
     
-  //   execute({
-  //     title,
-  //     id: data.id,
-  //     boardId: ""
-  //   });
-  // };
+    execute({
+      title,
+      id: data.id,
+      boardId: ""
+    });
+  };
 
   const onBlur = () => {
     formRef.current?.requestSubmit();
@@ -63,9 +63,7 @@ export const CardTitleForm = ({
 
   if (isEditing) {
     return (
-      <form
-      //  action={onSubmit}
-        ref={formRef} className="flex items-center gap-x-2">
+      <form action={onSubmit} ref={formRef} className="flex items-center gap-x-2">
         <FormInput
           ref={inputRef}
           id="title"
