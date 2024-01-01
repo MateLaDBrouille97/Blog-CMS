@@ -31,6 +31,7 @@ import { Button } from "../ui/button";
 import { ReturnButton } from "../ReturnButton";
 import { useCallback } from "react";
 
+
 const defaultComponents = {
   Scribble: TldrawScribble,
   CollaboratorScribble: TldrawScribble,
@@ -63,6 +64,7 @@ export default function Editor2({
 				// shapeUtils={defaultShapeUtils}
 				// tools={[...defaultTools, ...defaultShapeTools]}
 				// components={defaultComponents}
+				shareZone={<ReturnButton />}
 				store={store}
 			>
 				

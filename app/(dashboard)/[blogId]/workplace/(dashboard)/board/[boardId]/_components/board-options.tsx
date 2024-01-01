@@ -12,7 +12,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { useParams } from "next/navigation";
+import { useParams,useRouter } from "next/navigation";
 
 interface BoardOptionsProps {
   id: string;
@@ -20,6 +20,9 @@ interface BoardOptionsProps {
 }
 
 export const BoardOptions = ({ id, blogId }: BoardOptionsProps) => {
+
+  const router = useRouter();
+
   const { execute, isLoading } = useAction(deleteBoard, {
     onError: (error) => {
       toast.error(error);
@@ -32,6 +35,10 @@ export const BoardOptions = ({ id, blogId }: BoardOptionsProps) => {
       blogId,
     });
   };
+
+  const onReturn = () =>{
+		router.back()
+	  }
 
   return (
     <Popover>
@@ -59,6 +66,14 @@ export const BoardOptions = ({ id, blogId }: BoardOptionsProps) => {
           className="rounded-none w-full h-auto p-2 px-5 justify-start font-normal text-sm"
         >
           Delete this board
+        </Button>
+        <Button
+          variant="ghost"
+          onClick={onReturn}
+          disabled={isLoading}
+          className="rounded-none w-full h-auto p-2 px-5 justify-start font-normal text-sm"
+        >
+          Return to Workplace
         </Button>
       </PopoverContent>
     </Popover>

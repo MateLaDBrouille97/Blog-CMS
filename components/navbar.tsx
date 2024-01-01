@@ -21,7 +21,7 @@ const Navbar = async ({blogId}:{blogId:string}) => {
       <div className="flex h-16 items-center px-4">
         <MobileSidebar blogId={blogId}/>
         <MainNav className="mx-6" />
-        <div className="ml-auto flex items-center space-x-4">
+        <div className="ml-auto flex items-center space-x-2">
           <ThemeToggle />
           <UserButton afterSignOutUrl="/" />
         </div>
