@@ -15,11 +15,9 @@ import {
 
 interface BoardOptionsProps {
   id: string;
-  boardId:string;
-  blogId:string;
 };
 
-export const CardOptions = ({ id ,boardId,blogId}: BoardOptionsProps) => {
+export const CardOptions = ({ id }: BoardOptionsProps) => {
   const { execute, isLoading } = useAction(deleteCard, {
     onError: (error) => {
       toast.error(error);
@@ -29,8 +27,7 @@ export const CardOptions = ({ id ,boardId,blogId}: BoardOptionsProps) => {
   const onDelete = () => {
     execute({
       id,
-      boardId: boardId,
-      blogId: blogId,
+      boardId: ""
     });
   };
 
