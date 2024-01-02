@@ -155,10 +155,10 @@ export const Actions = ({
         disabled={isLoadingWhiteboard}
         variant="ghost"
         className="w-full justify-start"
-        size="inline"
+        size="icon"
       >
-        <ClipboardEdit className="h-4 w-4 mr-2 " />
-        Board
+        <ClipboardEdit className="h-2 w-2 mr-1 " />
+        Whiteboard
       </Button>
     </div>
   );

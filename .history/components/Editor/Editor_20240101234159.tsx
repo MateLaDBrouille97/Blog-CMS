@@ -61,7 +61,7 @@ export default function Editor2({
   return (
     <div className="tldraw__editor">
        <Tldraw
-				// persistenceKey={cardId}
+				persistenceKey={cardId}
 				// shareZone={<MakeRealButton />}
 				// shapeUtils={defaultShapeUtils}
 				// tools={[...defaultTools, ...defaultShapeTools]}

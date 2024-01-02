@@ -1,7 +1,7 @@
 "use client";
 
 import { toast } from "sonner";
-import { Copy, Trash,BookMarked,ClipboardEdit } from "lucide-react";
+import { Copy, Trash,BookMarked } from "lucide-react";
 import { useParams,useRouter } from "next/navigation";
 
 import { CardWithList } from "@/types";
@@ -157,8 +157,8 @@ export const Actions = ({
         className="w-full justify-start"
         size="inline"
       >
-        <ClipboardEdit className="h-4 w-4 mr-2 " />
-        Board
+        <BookMarked className="h-2 w-2 " />
+        Whiteboard
       </Button>
     </div>
   );

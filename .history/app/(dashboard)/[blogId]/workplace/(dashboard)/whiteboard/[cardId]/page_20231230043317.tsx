@@ -92,7 +92,7 @@ const Whiteboard = ({ params }: BoardIdPageProps) => {
   return (
     <>
       <div className="p-4 h-10 overflow-x-auto">
-        <Editor2 store={store} boardId={params.boardId} cardId={params.cardId} />
+        <Editor2 store={store} boardId={params.boardId}  />
       </div>
     </>
   );

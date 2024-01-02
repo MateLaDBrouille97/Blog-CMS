@@ -48,11 +48,9 @@ const Tldraw = dynamic(async () => (await import('@tldraw/tldraw')).Tldraw, {
 export default function Editor2({
   store,
   boardId,
-  cardId,
 }: {
   store: any;
   boardId: string;
-  cardId:string;
 }) {
 
 	
@@ -61,7 +59,7 @@ export default function Editor2({
   return (
     <div className="tldraw__editor">
        <Tldraw
-				// persistenceKey={cardId}
+				// persistenceKey="make-real"
 				// shareZone={<MakeRealButton />}
 				// shapeUtils={defaultShapeUtils}
 				// tools={[...defaultTools, ...defaultShapeTools]}
