@@ -6,10 +6,10 @@ import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
-import { Trash,  ArrowLeft } from "lucide-react";
+import { Trash } from "lucide-react";
 import { Author, BillboardBlog } from "@prisma/client";
 import { useParams, useRouter } from "next/navigation";
-import Link from "next/link";
+
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -130,17 +130,8 @@ export const AuthorForm: React.FC<AuthorFormProps> = ({
     }
   };
 
-  const href = `/${params.blogId}/authors`
-
   return (
     <>
-    <Link
-              href={href}
-              className="flex items-center text-sm hover:opacity-75 transition mb-6"
-            >
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Authors Main page
-            </Link>
       <AlertModal
         isOpen={open}
         onClose={() => setOpen(false)}

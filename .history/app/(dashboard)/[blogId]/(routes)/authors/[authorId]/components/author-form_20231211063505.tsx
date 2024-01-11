@@ -6,10 +6,10 @@ import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
-import { Trash,  ArrowLeft } from "lucide-react";
+import { Trash } from "lucide-react";
 import { Author, BillboardBlog } from "@prisma/client";
 import { useParams, useRouter } from "next/navigation";
-import Link from "next/link";
+
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -34,9 +34,6 @@ const formSchema = z.object({
   billboardBlogId: z.string().min(1),
   descriptionLong:z.string().min(1).nullable(),
   title:z.string().min(1).nullable(),
-  title2:z.string().min(1).nullable(),
-  title3:z.string().min(1).nullable(),
-  title4:z.string().min(1).nullable(),
   twitter:z.string().min(1).nullable(),
   facebook:z.string().min(1).nullable(),
   instagram:z.string().min(1).nullable(),
@@ -63,9 +60,6 @@ export const AuthorForm: React.FC<AuthorFormProps> = ({
   const [loading, setLoading] = useState(false);
 
   const title = initialData ? "Edit author" : "Create author";
-  const title2 = initialData ? "Edit author" : "Create author";
-  const title3 = initialData ? "Edit author" : "Create author";
-  const title4 = initialData ? "Edit author" : "Create author";
   const description = initialData ? "Edit a author." : "Add a new author";
   const toastMessage = initialData ? "Author updated." : "Author created.";
   const action = initialData ? "Save changes" : "Create";
@@ -80,9 +74,6 @@ export const AuthorForm: React.FC<AuthorFormProps> = ({
       image: "",
       descriptionLong:"",
       title:"",
-      title2:"",
-      title3:"",
-      title4:"",
       twitter:"",
       facebook:"",
       instagram:"",
@@ -130,17 +121,8 @@ export const AuthorForm: React.FC<AuthorFormProps> = ({
     }
   };
 
-  const href = `/${params.blogId}/authors`
-
   return (
     <>
-    <Link
-              href={href}
-              className="flex items-center text-sm hover:opacity-75 transition mb-6"
-            >
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Authors Main page
-            </Link>
       <AlertModal
         isOpen={open}
         onClose={() => setOpen(false)}
@@ -293,61 +275,7 @@ export const AuthorForm: React.FC<AuthorFormProps> = ({
               name="title"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Title</FormLabel>
-                  <FormControl>
-                    <Input
-                      disabled={loading}
-                      placeholder="titles"
-                      {...field}
-                      value={field.value || ''}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="title2"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Title</FormLabel>
-                  <FormControl>
-                    <Input
-                      disabled={loading}
-                      placeholder="titles"
-                      {...field}
-                      value={field.value || ''}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="title3"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Title</FormLabel>
-                  <FormControl>
-                    <Input
-                      disabled={loading}
-                      placeholder="titles"
-                      {...field}
-                      value={field.value || ''}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="title4"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Title</FormLabel>
+                  <FormLabel>Titles</FormLabel>
                   <FormControl>
                     <Input
                       disabled={loading}

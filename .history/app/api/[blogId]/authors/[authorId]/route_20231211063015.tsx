@@ -76,7 +76,7 @@ export async function PATCH(
 
     const body = await req.json();
 
-    const { billboardBlogId, firstName, lastName, email, image,descriptionLong,title, title2, title3, title4,twitter,facebook,instagram,github,linkedIn,buyMeACoffee } = body;
+    const { billboardBlogId, firstName, lastName, email, image,descriptionLong,title,twitter,facebook,instagram,github,linkedIn,buyMeACoffee } = body;
 
     if (!userId) {
       return new NextResponse("Unauthenticated", { status: 403 });
@@ -129,9 +129,6 @@ export async function PATCH(
         billboardBlogId: billboardBlogId,
         descriptionLong,
         title,
-        title2,
-        title3,
-        title4,
         twitter,
         facebook,
         instagram,
