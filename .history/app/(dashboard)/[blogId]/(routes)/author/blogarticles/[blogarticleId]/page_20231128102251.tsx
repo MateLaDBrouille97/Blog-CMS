@@ -5,6 +5,7 @@ import { CircleDollarSign, File, LayoutDashboard, ListChecks } from "lucide-reac
 import prismadb from "@/lib/prismadb";
 import { IconBadge } from "@/components/icon-badge";
 import { Banner } from "@/components/banner";
+
 import { TitleForm } from "./_components/title-form";
 import { DescriptionForm } from "./_components/description-form";
 import { ImageForm } from "./_components/image-form";
