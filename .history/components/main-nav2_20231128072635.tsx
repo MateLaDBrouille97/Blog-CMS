@@ -71,7 +71,7 @@ export const MainNav2 = ({ storageKey = "t-sidebar-state",blogId }: SidebarProps
 
   return (
     <>
-      {/* <div className="font-medium text-xs flex items-center mb-1">
+      <div className="font-medium text-xs flex items-center mb-1">
         <span className="pl-4">Workspaces</span>
         <Button
           asChild
@@ -84,8 +84,8 @@ export const MainNav2 = ({ storageKey = "t-sidebar-state",blogId }: SidebarProps
             <Plus className="h-4 w-4" />
           </Link>
         </Button>
-      </div> */}
-      {/* <Accordion
+      </div>
+      <Accordion
         type="multiple"
         defaultValue={defaultAccordionValue}
         className="space-y-2"
@@ -100,7 +100,7 @@ export const MainNav2 = ({ storageKey = "t-sidebar-state",blogId }: SidebarProps
             blogId={blogId}
           />
         ))}
-      </Accordion> */}
+      </Accordion>
 
       <div className="h-full  flex flex-col overflow-y-auto bg-white shadow-sm">
         <div className="flex flex-col w-full">

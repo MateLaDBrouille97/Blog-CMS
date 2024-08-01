@@ -1,6 +1,6 @@
 "use client";
 
-import { BarChart, Compass, Layout, List,Users,MessageCircle,CalendarCheck2,CheckSquare } from "lucide-react";
+import { BarChart, Compass, Layout, List,Users,MessageCircle,CalendarCheck2 } from "lucide-react";
 import { useParams, usePathname } from "next/navigation";
 
 import { SidebarItem } from "./sidebar-items";
@@ -60,9 +60,9 @@ export const SidebarRoutes = () => {
     // },
     {
       href: `/${params.blogId}/visibility`,
-      label: "Visibility",
+      label: "Visibily",
     //   active: pathname === `/${params.blogId}/comments`,
-      icon: CheckSquare,
+      icon: MessageCircle,
     },
   ];
 

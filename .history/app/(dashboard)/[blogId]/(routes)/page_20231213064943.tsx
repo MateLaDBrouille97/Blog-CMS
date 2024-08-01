@@ -39,8 +39,8 @@ const DashboardPage: React.FC<DashboardPageProps> = async ({
 
   const totalBACount= await getBACount(params?.blogId);
   const totalChapterCount= await getChaptersCount(params?.blogId);
-  const graphCount =await getGraphCount(params?.blogId);
-  const graphCountCategory =await getGraphCountByCategory(params?.blogId);
+  const graphCount =await getGraphCount(params?.blogId)
+  const graphCountCategory =await getGraphCountByCategory(params?.blogId)
   const newsArticles=await getBACountByCategory(params?.blogId,categoryName[0]);
   const opinionsArticles=await getBACountByCategory(params?.blogId,categoryName[1]);
   const geopolArticles=await getBACountByCategory(params?.blogId,categoryName[2]);

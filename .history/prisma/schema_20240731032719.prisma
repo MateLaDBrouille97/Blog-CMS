@@ -162,6 +162,9 @@ model Author {
   image           String
   descriptionLong     String?
   title           String?
+  title2          String?
+  title3          String?
+  title4           String?
   twitter         String?
   facebook        String?
   instagram       String?
@@ -173,6 +176,8 @@ model Author {
   blog            Blog          @relation("BlogToAuthor", fields: [blogId], references: [id])
   billboard       BillboardBlog @relation("BillboardToAuthor", fields: [billboardBlogId], references: [id])
   articles        Blogarticle[]
+    qualifications  Qualification[]
+  porfolioPosts   PortfolioPost[]
 
   @@index([blogId])
 }
@@ -397,6 +402,7 @@ enum ENTITY_TYPE {
   WHITEBOARD
 }
 
+
 model AuditLog {
   id          String  @id @default(uuid())
   orgId       String
@@ -410,4 +416,60 @@ model AuditLog {
 
   createdAt   DateTime @default(now())
   updatedAt   DateTime  @updatedAt
+}
+
+
+
+model Subscriber {
+  id              Int     @id @default(autoincrement())
+  email           String  @unique
+  is_subscribed   Boolean @default(true)
+}
+
+model Qualification {
+    id            String  @id @default(uuid())
+    name          String
+    institute     String 
+    calendarBegin DateTime
+    calendarEnd   DateTime
+    type          QualifType
+    position      String 
+    author        Author @relation(fields: [authorId], references: [id])
+    authorId      String
+
+    createdAt   DateTime @default(now())
+    updatedAt   DateTime  @updatedAt
+}
+
+enum QualifType {
+  EDUCATION
+  EXPERIENCE
+    
+}
+
+model PortfolioPost{
+id           String  @id @default(uuid())
+title        String 
+description  String 
+technologies String[]
+addressPost  String
+type         PortfolioType
+problem      String
+solution     String 
+features     String[]
+year         Int 
+authorId     String
+author       Author  @relation(fields: [authorId], references: [id])
+
+createdAt    DateTime @default(now())
+updatedAt    DateTime  @updatedAt
+
+}
+
+
+enum PortfolioType {
+  WEB  
+  APP 
+  AI  
+  DATA_ANALYSIS
 }

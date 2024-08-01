@@ -417,3 +417,9 @@ model AuditLog {
 }
 
 
+
+model Subscriber {
+  id              Int     @id @default(autoincrement())
+  email           String  @unique
+  is_subscribed   Boolean @default(true)
+}

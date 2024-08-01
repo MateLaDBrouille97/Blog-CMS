@@ -8,6 +8,8 @@ export const getBACountByCategory = async (blogId:string,categoryName: string) =
         name:categoryName,
       }     
     },
+    
+    
   });
 
   return blogArticlesCountbyCategory;
